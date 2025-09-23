@@ -5,12 +5,13 @@
     "email": "test@test.com",
     "url": ""
 	},
-  "documentation_url": "",
-  "example_url": "",
-  "preview_path": "./templates/home.html",
-  "screenshot_path": "",
+  "documentation_url": null,
+  "example_url": null,
+  "preview_path": null,
+  "screenshot_path": null,
   "enable_domain_stylesheets": false,
   "license": "./license.txt",
+  "is_available_for_new_content": true,
   "responsive_breakpoints": [
     {
       "name": "mobile",

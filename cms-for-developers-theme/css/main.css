@@ -1,25 +1,106 @@
 /* Theme base styles */
+{% include './_reset.css' %}
+{% include './_layout.css' %}
+{% include './_header.css' %}
+{% include './_helper.css' %}
 
-/* Generic
-This is where reset, normalize & box-sizing styles go.
-*/
 
-{% include './generic/_reset.css' %}
+.body-wrapper>div:has(.header) {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: {{ theme.colors.header_bg.color }};
+    opacity:  {{ theme.colors.header_bg.opacity }};
+    padding: 16px;
+    margin-bottom: 60px;
+}
 
-/* Objects
-Non-cosmetic design patterns including grid and layout classes)
-*/
+header {
+    width: 100%;
+}
 
-{% include './objects/_layout.css' %}
+.header__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
 
-/* Components
-Specific pieces of UI that are stylized. Typically used for global partial styling
-*/
+@media screen and (min-width:768px){
+    .header__container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+    }
+}
+        
+@media screen and (min-width:1200px){
+    .header__container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+    }
+}
 
-{% include './components/_header.css' %}
+.header__navigation>ul{
+    display: flex;
+    gap: 16px;
+}
 
-/* Utilities
-Helper classes with ability to override anything that comes before it
-*/
+.header__navigation li {
+    list-style-type: none;
+}
 
-{% include './utilities/_helper.css' %}
+.body-wrapper>div:has(footer) {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: {{ theme.colors.header_bg.color }};
+    opacity:  {{ theme.colors.header_bg.opacity }};
+    padding: 16px;
+    margin-top: 60px;
+}
+
+footer {
+    width: 100%;
+    background-color: {{ theme.colors.footer_bg.color }};
+    opacity:  {{ theme.colors.footer_bg.opacity }};
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body>* {
+    width: 100%;
+}
+
+.body-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;    
+}
+
+main {
+    width: stretch;
+    max-width: 1200px;
+}
+
+.row-fluid-wrapper + .row-fluid-wrapper {
+    {{ theme.section.section_spacing.css }};
+}
+
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}

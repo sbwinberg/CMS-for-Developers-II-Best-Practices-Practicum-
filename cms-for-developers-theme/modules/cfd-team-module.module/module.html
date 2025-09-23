@@ -1,0 +1,51 @@
+<!-- module html  -->
+
+<div class="team__container">
+    <div class="team__heading">
+        <h2>{{ module.heading }}</h2>
+    </div>
+    <div class="team__grid">
+        {% for item in module.item %}
+        <div class="item">
+            <div class="item__thumbnail">
+                {% if item.thumbnail.src %}
+                        {% set sizeAttrs = 'width="{{ item.thumbnail.width|escape_attr }}" height="{{ item.thumbnail.height|escape_attr }}"' %}
+                    {% if item.thumbnail.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item.thumbnail.width|escape_attr }}" height="{{ item.thumbnail.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% elif item.thumbnail.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item.thumbnail.max_width|escape_attr }}" height="{{ item.thumbnail.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                        {% set loadingAttr = item.thumbnail.loading != 'disabled' ? 'loading="{{ item.thumbnail.loading|escape_attr }}"' : '' %}
+                        <img src="{{ item.thumbnail.src|escape_url }}" alt="{{ item.thumbnail.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+            </div>
+            <div class="item__content">
+                <h3>{% inline_rich_text field="headline" value="{{ item.headline }}" %}</h3>
+                <h4>{% inline_rich_text field="occupation" value="{{ item.occupation }}" %}</h4>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% require_css %}
+    <style>
+    {% scope_css %}
+        .item {
+            background-color: {{ theme.colors.another_bg.color }};
+            {{ module.styles.border_field.css }};
+        }
+        @media screen and (min-width:768px){
+            .team__grid{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media screen and (min-width:1200px){
+            .team__grid{
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    {% end_scope_css %}
+    </style>
+{% end_require_css %}

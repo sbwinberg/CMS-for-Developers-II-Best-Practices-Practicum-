@@ -1,0 +1,94 @@
+[
+  {
+    "name": "image",
+    "label": "Image",
+    "required": false,
+    "locked": false,
+    "children": [
+    {
+      "name": "image_field",
+      "label": "Image field",
+      "required": false,
+      "locked": false,
+      "inline_help_text": "",
+      "help_text": "",
+      "responsive": true,
+      "resizable": true,
+      "show_loading" : false,
+      "type": "image",
+      "default": {
+        "size_type" : "auto",
+        "src": "",
+        "alt": null,
+        "loading": "lazy"
+      }
+    }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {}
+  },
+  {
+  "name": "rich_text",
+  "label": "Rich text",
+  "required": false,
+  "locked": false,
+  "children": [
+    {
+      "name": "richtext_field",
+      "label": "Rich text field",
+      "required": false,
+      "locked": false,
+      "type": "richtext",
+      "inline_help_text": "",
+      "help_text": "",
+      "default": null 
+    }
+  ],
+  "type": "group",
+  "inline_help_text": "",
+  "help_text": "",
+  "default": {} 
+},
+{
+"name": "styles",
+"label": "Styles",
+"children": [
+  {
+  "name": "border_field",
+  "label": "Border field",
+  "required": false,
+  "locked": false,
+  "inline_help_text": "",
+  "help_text": "",
+  "type": "border",
+  "allow_custom_border_sides": true
+  },
+  {
+    "name": "image_alignment",
+    "label": "Image alignment",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "inline_help_text": "",
+    "help_text": "",
+    "choices": [
+      [
+        "row",
+        "Image left"
+      ],
+      [
+        "row-reverse",
+        "Image right"
+      ]
+    ],
+    "type": "choice",
+    "placeholder": "",
+    "default": null 
+  }
+],
+"type": "group",
+"tab": "STYLE"
+}
+]
