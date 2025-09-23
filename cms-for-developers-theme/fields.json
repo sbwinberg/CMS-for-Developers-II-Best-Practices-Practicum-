@@ -1,13 +1,13 @@
 [
   {
   "name": "colors",
-  "label": "Colors",
+  "label": "Global colors",
   "required": false,
   "locked": false,
   "children": [
     {
-    "label": "Header background color",
-    "name": "header_bg",
+    "label": "Primary Color",
+    "name": "primary_color",
     "type": "color",
     "inherited_value": {
       "property_value_paths": {
@@ -16,9 +16,9 @@
     }
     },
     {
-      "label": "Footer background color",
-      "name": "footer_bg",
-      "type": "color",   
+      "label": "Secondary Color",
+      "name": "secondary_color",
+      "type": "color",
       "inherited_value": {
         "property_value_paths": {
           "color": "brand_settings.secondaryColor"
@@ -26,8 +26,8 @@
       }
     },
     {
-      "label": "Third color for something exciting",
-      "name": "another_bg",
+      "label": "Tertiary Color",
+      "name": "tertiary_color",
       "type": "color",
       "inherited_value": {
         "property_value_paths": {
@@ -39,7 +39,32 @@
   "type": "group",
   "inline_help_text": "",
   "help_text": "",
-  "default": {} 
+  "default": {}
+  },
+  {
+    "name": "hf_color",
+    "label": "Header and Footer color",
+    "required": false,
+    "locked": false,
+    "children": [
+      {
+        "name": "color",
+        "label": "Color",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "type": "color",
+        "default": {
+          "color": "#ffffff",
+          "opacity": 100
+        }
+      }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": {}
   },
   {
   "name": "spacing",
@@ -65,7 +90,7 @@
   "type": "group",
   "inline_help_text": "",
   "help_text": "",
-  "default": {} 
+  "default": {}
 }
-  
+
 ]

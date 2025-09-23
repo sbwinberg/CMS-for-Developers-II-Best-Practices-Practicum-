@@ -1,11 +1,5 @@
 [
   {
-    "label": "Section heading",
-    "default": "This is the unedited heading",
-    "name": "heading",
-    "type": "richtext"
-  },
-  {
     "name": "item",
     "label": "Item",
     "type": "group",
@@ -52,10 +46,10 @@
         "allow_new_line": false,
         "show_emoji_picker": false,
         "type": "text",
-        "default": "Occupation" 
+        "default": "Occupation"
       }
     ],
-    "default": [] 
+    "default": []
   },
   {
   "name": "styles",

@@ -2,9 +2,35 @@
   templateType: section
   label: Image and text
   isAvailableForNewContent: true
-  screenshotPath: ../images/section-previews/cards.png
+  screenshotPath: ../images/section-preview/image-and-text.png
   description: "Middle centered heading above three cards, containing an image and text each."
 -->
-
 {%dnd_section%}
-{%end_dnd_section%}
+  <div class="container">
+    <div class="image__container">
+    {% dnd_module
+    path="@hubspot/image",
+    width=6,
+    offset=0,
+    img={
+    "src": get_asset_url('../images/section-preview/grid.png'),
+    "alt": "placeholder",
+    "loading": "disabled",
+    "width": 200,
+    "height": 200
+    }
+    %}
+{% end_dnd_module %}
+</div>
+<div class="content__container">
+{% dnd_module
+width=6,
+offset=6,
+path="@hubspot/rich_text",
+value="<h2>Casual heading</h2><p>This is some generic text</p>"
+%}
+{% end_dnd_module %}
+</div>
+    </div>
+  {%end_dnd_section%}
+
